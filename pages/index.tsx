@@ -24,7 +24,7 @@ export default function Users({ initialData }) {
             <button onClick={handleClick}>FETCH DATA</button>
             {data.map((user) => {
                 return (
-                    <div>
+                    <div key={user.login.uuid}>
                         {user.email}
                         <img src={user.picture.medium} alt="" />
                     </div>
