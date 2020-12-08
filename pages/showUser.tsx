@@ -2,6 +2,7 @@
 import Layout from '../components/layout'
 import User from '../components/user'
 import { useState } from 'react';
+import Head from 'next/head'
 
 export default function Users({ initialData }) {
   const [data, setData] = useState(initialData);
@@ -24,7 +25,12 @@ export default function Users({ initialData }) {
   
 
   return (
+    
       <Layout>
+        <Head>
+        <title>show user</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
           <button onClick={handleClick}>FETCH DATA</button>
           {data.map((user) => {
           return (<User key={user.login.uuid} email={user.email} login={user.login.uuid} picture={user.picture.medium}/> );
